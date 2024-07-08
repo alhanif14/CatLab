@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CatLab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/justLogo.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}"> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="{{ url_for('index') }}">
+                                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{{ url_for('index') }}">home</a></li>
+                                        <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                                        <li><a href="{{ url_for('about') }}">about</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider slider_bg_1 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="slider_text">
+                            <h3>CatLab's <br> <span>Pet Feeder</span></h3>
+                            <p>Innovating Pet Care with Automation and Mobility</p>
+                            <a href="{{ url_for('feed') }}" class="boxed-btn4">Feed Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dog_thumb d-none d-lg-block">
+                <img src="{{ url_for('static', filename='img/banner/Cat.png') }}" alt="Cat Image">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- reasons_area_start -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>How to use CatLab's Pet Feeder?</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                            <div class="service_icon">
+                                <img src="{{ url_for('static', filename='img/service/kitty.png') }}" alt="Kitty Icon">
+                            </div>
+                        </div>
+                        <div class="service_content text-center">
+                            <p>The first thing to do is choose your pet, either kitten or cat.</p>
+                        </div>
+                        <h3>Step 1</h3>
+                        <p>Choose your pet</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                        <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                            <div class="service_icon">
+                                <img src="{{ url_for('static', filename='img/service/kitty (2).png') }}" alt="Kitty Icon 2">
+                            </div>
+                        </div>
+                        <div class="service_content text-center">
+                            <p>You are able to take care of your pets and besides that, you can have fun with our RC.</p>
+                        </div>
+                        <h3>Step 2</h3>
+                        <p>Have fun with our RC</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                            <div class="service_icon">
+                                <img src="{{ url_for('static', filename='img/service/kitty (1).png') }}" alt="Kitty Icon 3">
+                            </div>
+                        </div>
+                        <div class="service_content text-center">
+                            <p>The last thing to do is, select portion for your cat <br>
+                            500 - 1000 Step <br>
+                            Or you can custom it by your preference</p> 
+                        </div>
+                        <h3>Step 3</h3>
+                        <p>Choose the portion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- pet_care_area_start -->
+    <div class="pet_care_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="pet_thumb">
+                        <img src="{{ url_for('static', filename='img/about/pet_care.png') }}" alt="Pet Care Image">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 col-md-6">
+                    <div class="pet_info">
+                        <div class="section_title">
+                            <h3><span>We care your pet </span> <br> As you care</h3>
+                            <p>CatLab is a revolutionary pet feeder combining mobility and remote control for seamless, automated feeding. Mounted on an RC car, it allows precise portion control and remote adjustments via a web interface, making pet care more convenient and efficient.</p>
+                            <a href="{{ url_for('about') }}" class="boxed-btn3">About Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pet_care_area_end -->
+
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>CatLab</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- JS here -->
+<script src="{{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ajax-form.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scrollIt.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+<script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+
+<!-- Contact JS -->
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.form.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<script>
+    $('#datepicker').datepicker({
+        iconsLibrary: 'fontawesome',
+        disableDaysOfWeek: [0, 0],
+        // icons: {
+        // rightIcon: '<span class="fa fa-caret-down"></span>'
+        // }
+    });
+    $('#datepicker2').datepicker({
+        iconsLibrary: 'fontawesome',
+        icons: {
+            rightIcon: '<span class="fa fa-caret-down"></span>'
+        }
+    });
+    var timepicker = $('#timepicker').timepicker({
+        format: 'HH.MM'
+    });
+</script>
+</body>
+
+</html>

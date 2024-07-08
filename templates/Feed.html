@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CatLab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/justLogo.png') }}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.css') }}">
+</head>
+
+<body onload="initClock()">
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="{{ url_for('index') }}">
+                                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{{ url_for('index') }}">home</a></li>
+                                        <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                                        <li><a href="{{ url_for('about') }}">about</a></li>
+                                        <!-- <li><a href="Feed.html">Feed</a></li> -->
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Feed your pet now</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-100">
+            <!-- Bagian Pertama -->
+            <div class="flex flex-col justify-center items-center p-8 rounded-md shadow-2xl bg-white">
+                <img class="w-24 md:w-32" src="{{ url_for('static', filename='img/adapt_icon/2.png') }}" alt="" srcset="">
+                <div class="text-center">
+                    <h3 class="persen text-3xl md:text-5xl"><span id="foodPercentage" class="counter">37</span>%</h3>
+                    <p class="text-lg md:text-xl text-black">Food Available</p>
+                </div>
+            </div>
+    
+            <!-- Bagian Kedua -->
+            <div class="flex items-center p-8 rounded-md shadow-2xl bg-white md:col-span-1">
+                <img class="aspect-square p-3 w-24 md:w-auto" src="{{ url_for('static', filename='img/about/clock (1).png') }}" alt="Clock Image">
+                <div id="timedate" class="ml-5 text-center md:text-left">
+                        <a id="mon">June</a>
+                        <a id="d">14</a>,
+                        <a id="y">2024</a> <br>
+                        <a id="h">12</a> :
+                        <a id="m">40</a> :
+                        <a id="s">56</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="center-container">
+        <div class="input-container">
+            <p class="feed-text">Feed your pet</p>
+            <div class="input">
+                <input id="stepsInput" class="to-do-input" placeholder="I Want To Custom..." name="steps" type="text" />
+            </div>
+            <button class="input button" onclick="sendStepperCommand()">Feed</button>
+        </div>
+    </div>
+    
+    <!-- Submit end -->
+    <div id="historyContainer" class="history-container">
+        <h2>History</h2>
+        <div class="history-header">
+            <div class="history-column">Date</div>
+            <div class="history-column">Time</div>
+            <div class="history-column">Step</div>
+        </div>
+        <div class="history-entries">
+            <!-- Riwayat akan ditambahkan di sini -->
+        </div>
+    </div>
+
+    <div class="adapt_area ">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>CatLab</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/clock.js') }}"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollIt.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    
+    <script>
+        // Menghubungkan ke server SocketIO
+        const socket = io.connect();
+    
+        // Fungsi untuk menangkap event 'distance_update' dari server
+        socket.on('distance_update', function(data) {
+            const percentage = data.percentage;
+            // Update elemen HTML dengan id 'foodPercentage' sesuai dengan persentase yang diterima
+            document.getElementById('foodPercentage').innerText = percentage + '';
+        }); // Pastikan menutup fungsi socket.on dengan }
+    
+        // Fungsi untuk mengirimkan command stepper motor
+        function sendStepperCommand() {
+            var steps = document.getElementById("stepsInput").value;
+            if (steps) {
+                $.post("/control_stepper", { steps: steps }, function(data) {
+                    alert(data); // Tampilkan respons dari server (opsional)
+                    addToHistory(steps, new Date()); // Tambahkan ke riwayat setelah berhasil
+                });
+            }
+        }
+    
+        // Fungsi untuk menambahkan entri baru ke dalam riwayat
+        function addToHistory(steps, time) {
+            var historyEntries = document.querySelector('.history-entries');
+    
+            // Buat elemen baru untuk entri riwayat
+            var historyEntry = document.createElement('div');
+            historyEntry.classList.add('history-entry');
+            
+            // Format waktu input menjadi tanggal, waktu, dan langkah
+            var date = time.toLocaleDateString('en-US');
+            var timeStr = time.toLocaleTimeString('en-US');
+            
+            historyEntry.innerHTML = `
+                <div class="history-date">${date}</div>
+                <div class="history-time">${timeStr}</div>
+                <div class="history-steps">${steps}</div>
+            `;
+    
+            // Masukkan elemen ke dalam container riwayat
+            historyEntries.appendChild(historyEntry);
+        }
+    </script>
+        
+    
+</body>
+</html>
